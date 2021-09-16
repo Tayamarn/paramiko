@@ -93,7 +93,7 @@ from paramiko.sftp import (
 from paramiko.common import io_sleep
 
 
-__author__ = "Jeff Forcier <jeff@bitprophet.org>"
+__author__ = "Jeff Forcier <jeff@bitprophet.org> test"
 __license__ = "GNU Lesser General Public License (LGPL)"
 
 __all__ = [

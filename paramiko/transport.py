@@ -1801,12 +1801,16 @@ class Transport(threading.Thread, ClosingContextManager):
             # race condition preventing it from timing out correctly), wherein
             # our socket and packetizer are both closed (but where we'd
             # otherwise be sitting forever on that recv()).
+            n = 0
+            print('We are in hacked paramiko now.')
             while (
                 self.is_alive()
                 and self is not threading.current_thread()
                 and not self.sock._closed
                 and not self.packetizer.closed
+                and n < 10
             ):
+                n += 1
                 self.join(0.1)
 
     # internals...
